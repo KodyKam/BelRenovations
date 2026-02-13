@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <title>Zerubbabel Renovations | Before & After</title>
+  <title>Zerubbabel Renovations | Basement & Kitchen Remodeling in [City]</title>
+<meta name="description" content="Professional basement, kitchen, and home renovations in [City]. View real before and after projects. Free estimates available.">
   <!-- Google Fonts + simple CSS reset -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -11,6 +12,10 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
+  scroll-behavior: smooth;
     }
 
     body {
@@ -462,9 +467,27 @@
 
     <!-- additional reassurance – builder does it all -->
     <div class="service-note">
-      <p>⚡ <strong>Every trade, one team.</strong> Basements, kitchens, baths, additions, decks, tile, trim, drywall, flooring – we self-perform 90% of work. No sub contractor chaos.</p>
-      <a href="#" class="btn">📋 Request estimate</a>
-    </div>
+  <p>⚡ <strong>Every trade, one team.</strong> Basements, kitchens, baths, additions, decks, tile, trim, drywall, flooring – we self-perform 90% of work. No sub contractor chaos.</p>
+
+  <form action="https://formspree.io/f/mkovjveq" method="POST" style="margin-top:20px; width:100%; max-width:500px;">
+    
+    <input type="hidden" name="_redirect" value="https://kodykam.github.io/BelRenovations/?success=true">
+
+    <input type="text" name="name" placeholder="Your Name" required
+      style="width:100%; padding:12px; margin-bottom:10px; border-radius:8px; border:1px solid #ccc;">
+
+    <input type="email" name="email" placeholder="Your Email" required
+      style="width:100%; padding:12px; margin-bottom:10px; border-radius:8px; border:1px solid #ccc;">
+
+    <textarea name="message" placeholder="Tell us about your project" rows="4"
+      style="width:100%; padding:12px; margin-bottom:12px; border-radius:8px; border:1px solid #ccc;"></textarea>
+
+    <button type="submit"
+      style="background:#2d3e2f; color:white; padding:12px 24px; border:none; border-radius:40px; font-weight:600; cursor:pointer;">
+      📋 Request Free Estimate
+    </button>
+  </form>
+</div>
 
     <!-- second before/after highlight: might be a featured project with more emphasis 
          (still showing variety) -->
@@ -500,9 +523,9 @@
       </div>
       <div style="display: flex; gap: 48px; flex-wrap: wrap;">
         <div>
-          📍 784 Kingstown Park Ave, Central Kingstown<br>
-          📞 (800) 257-1234<br>
-          ✉️ hello@zerubbabellrenovation.com
+          📍 784 Kingstown Park, Central Kingstown<br>
+          📞 <a href="tel:(800)257-1234">(800) 257-1234</a><br>
+          📧 <a href="mailto:hello@zerubbabelrenovation.com">hello@zerubbabelrenovation.com</a>
         </div>
         <div style="font-style: italic; color: #6a6156;">
           "we fix what's broken,<br>and finish what's started"
@@ -516,5 +539,25 @@
     ⚠️ demo: replace these styled placeholder divs with your own before/after photos (jpg/png).<br> 
     The layout is built to highlight transformations — just swap the .img-placeholder with &lt;img&gt; tags.
   </div> -->
+  <script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const form = document.getElementById("contact-form");
+
+    if (params.get("success") === "true") {
+      form.reset();
+
+      const successMsg = document.createElement("div");
+      successMsg.textContent = "✅ Thank you! Your request has been sent.";
+      successMsg.style.marginTop = "15px";
+      successMsg.style.color = "#2d3e2f";
+      successMsg.style.fontWeight = "600";
+
+      form.appendChild(successMsg);
+
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  });
+</script>
 </body>
 </html>
