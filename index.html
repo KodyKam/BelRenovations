@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Zerubbabel Renovations | Before & After</title>
+  <!-- Google Fonts + simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #faf9f7;
+      color: #1e1e1e;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header / navigation */
+    .site-header {
+      padding: 24px 0 16px 0;
+      border-bottom: 3px solid #d88c3d;
+      margin-bottom: 40px;
+    }
+
+    .header-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-area h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #2d3e2f;
+    }
+
+    .logo-area span {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #6b4f3c;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #3a2c1f;
+      font-size: 1.05rem;
+      transition: color 0.1s;
+      padding: 8px 0;
+      border-bottom: 3px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: #b26b2b;
+      border-bottom-color: #b26b2b;
+    }
+
+    /* simple hero */
+    .hero {
+      background: linear-gradient(105deg, #ede7dd 0%, #f6f2ec 100%);
+      border-radius: 24px;
+      padding: 40px 36px;
+      margin-bottom: 56px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-text h2 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #2c4935;
+      margin-bottom: 12px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #4e4a44;
+      max-width: 600px;
+    }
+
+    .hero-badge {
+      background-color: #d88c3d;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      box-shadow: 0 8px 14px rgba(0,0,0,0.05);
+    }
+
+    /* MAIN FOCUS: before/after gallery */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e3a2a;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+      border-left: 8px solid #d88c3d;
+      padding-left: 20px;
+    }
+
+    .gallery-intro {
+      font-size: 1.2rem;
+      color: #4d4a45;
+      margin-bottom: 40px;
+    }
+
+    .ba-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px 30px;
+      margin-bottom: 64px;
+    }
+
+    /* before/after card – image pair */
+    .ba-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #ece8e0;
+    }
+
+    .ba-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 40px rgba(94, 69, 42, 0.08);
+    }
+
+    .image-pair {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    /* side-by-side on wider cards, but keep column on narrow */
+    @media (min-width: 680px) {
+      .image-pair {
+        flex-direction: row;
+      }
+      .ba-img {
+        width: 50%;
+      }
+    }
+
+    .ba-img {
+      position: relative;
+      background: #dbd5cb;
+    }
+
+    .ba-img img {
+      display: block;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* simple labels */
+    .label {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(4px);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 30px;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .card-content {
+      padding: 22px 20px;
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #2b3e2b;
+    }
+
+    .project-desc {
+      color: #625e57;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #efe9e1;
+      padding: 4px 16px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #5a4c3a;
+    }
+
+    /* secondary row – extra service highlight */
+    .service-note {
+      background: #f4efe8;
+      border-radius: 18px;
+      padding: 32px 28px;
+      margin: 24px 0 48px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .service-note p {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #35322b;
+    }
+
+    .service-note strong {
+      color: #9e642c;
+    }
+
+    .btn {
+      background: #2d3e2f;
+      color: white;
+      padding: 12px 36px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #4f6b52;
+    }
+
+    /* footer */
+    .site-footer {
+      border-top: 1px solid #dbd3c9;
+      padding: 40px 0 30px;
+      margin-top: 20px;
+      color: #595249;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    /* mobile adjustments */
+    @media (max-width: 680px) {
+      .header-flex {
+        flex-direction: column;
+        align-items: start;
+        gap: 16px;
+      }
+      .hero {
+        flex-direction: column;
+        align-items: start;
+        gap: 24px;
+      }
+      .hero-text h2 {
+        font-size: 1.8rem;
+      }
+      .nav-links {
+        gap: 24px;
+      }
+      .ba-img img {
+        height: 180px;
+      }
+    }
+
+    /* placeholder style – because we don't have actual images */
+    .img-placeholder {
+      background: linear-gradient(145deg, #c1b6a8, #aea08f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .img-placeholder::before {
+      content: "📷 " attr(data-label);
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="header-flex">
+        <div class="logo-area">
+          <h1>Zerubbabel Renovations<span>construction · renovations · craft</span></h1>
+        </div>
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#" style="border-bottom-color: #b26b2b; color: #2d3e2f;">Before/After</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- simple hero acknowledging 'builder does everything' -->
+    <div class="hero">
+      <div class="hero-text">
+        <h2>From basement to rooftop.</h2>
+        <p>Kitchens, baths, basements, additions — we transform it all. No job too small, no vision too big.</p>
+      </div>
+      <div class="hero-badge">
+        ⚒️ 35+ projects in 2025
+      </div>
+    </div>
+
+    <!-- ********** MAIN GALLERY: BEFORE & AFTER ********** -->
+    <h2 class="section-title">Before & after</h2>
+    <p class="gallery-intro">Real work. Real homes. Every renovation tells a story.</p>
+    
+    <div class="ba-grid">
+      
+      <!-- 1 – Basement transformation -->
+      <div class="ba-card">
+        <div class="image-pair">
+          <div class="ba-img">
+            <div class="label">BEFORE</div>
+            <!-- Image placeholder – in real use, replace src with actual images -->
+            <div class="img-placeholder" data-label="basement old" style="height:200px; background: #8f7e6b;"></div>
+          </div>
+          <div class="ba-img">
+            <div class="label" style="background: #1e4a2e;">AFTER</div>
+            <div class="img-placeholder" data-label="basement new" style="height:200px; background: #a58862;"></div>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3 class="project-title">Dark basement → bright den</h3>
+          <p class="project-desc">Full waterproofing, egress window, luxury vinyl plank, and recessed lighting. Now a guest suite + home gym.</p>
+          <span class="tag">basement</span>
+        </div>
+      </div>
+      
+      <!-- 2 – Kitchen gut remodel -->
+      <div class="ba-card">
+        <div class="image-pair">
+          <div class="ba-img">
+            <div class="label">BEFORE</div>
+            <div class="img-placeholder" data-label="90s kitchen" style="height:200px; background: #9b8a7a;"></div>
+          </div>
+          <div class="ba-img">
+            <div class="label" style="background: #1e4a2e;">AFTER</div>
+            <div class="img-placeholder" data-label="modern kitchen" style="height:200px; background: #bea98b;"></div>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3 class="project-title">Outdated to open-concept</h3>
+          <p class="project-desc">Removed load-bearing wall, custom shaker cabinets, quartz island, panel-ready appliances.</p>
+          <span class="tag">kitchen</span> <span class="tag" style="margin-left:6px;">structural</span>
+        </div>
+      </div>
+      
+      <!-- 3 – Bathroom + laundry combo -->
+      <div class="ba-card">
+        <div class="image-pair">
+          <div class="ba-img">
+            <div class="label">BEFORE</div>
+            <div class="img-placeholder" data-label="tiny bath" style="height:200px; background: #897b6f;"></div>
+          </div>
+          <div class="ba-img">
+            <div class="label" style="background: #1e4a2e;">AFTER</div>
+            <div class="img-placeholder" data-label="spa bath" style="height:200px; background: #b6a38e;"></div>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3 class="project-title">Main bath + laundry rework</h3>
+          <p class="project-desc">Relocated plumbing, curbless shower, heated floor, and hidden laundry station. Accessibility + style.</p>
+          <span class="tag">bathroom</span> <span class="tag">laundry</span>
+        </div>
+      </div>
+      
+      <!-- 4 – Addition: sunroom / family room -->
+      <div class="ba-card">
+        <div class="image-pair">
+          <div class="ba-img">
+            <div class="label">BEFORE</div>
+            <div class="img-placeholder" data-label="exterior wall" style="height:200px; background: #7e7368;"></div>
+          </div>
+          <div class="ba-img">
+            <div class="label" style="background: #1e4a2e;">AFTER</div>
+            <div class="img-placeholder" data-label="sunroom" style="height:200px; background: #cdb79e;"></div>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3 class="project-title">First-floor addition</h3>
+          <p class="project-desc">400sq ft sunroom with vaulted cedar ceiling, skylights, and French doors. Foundation to finish.</p>
+          <span class="tag">addition</span> <span class="tag">framing</span>
+        </div>
+      </div>
+      
+      <!-- 5 – Deck & outdoor living (more construction) -->
+      <div class="ba-card">
+        <div class="image-pair">
+          <div class="ba-img">
+            <div class="label">BEFORE</div>
+            <div class="img-placeholder" data-label="rotted deck" style="height:200px; background: #877a6b;"></div>
+          </div>
+          <div class="ba-img">
+            <div class="label" style="background: #1e4a2e;">AFTER</div>
+            <div class="img-placeholder" data-label="composite deck" style="height:200px; background: #ab9b86;"></div>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3 class="project-title">Two-tier composite deck</h3>
+          <p class="project-desc">Tore down old wood deck, built new with hidden fasteners, cable railing, and integrated seating.</p>
+          <span class="tag">deck</span> <span class="tag">exterior</span>
+        </div>
+      </div>
+      
+      <!-- 6 – Whole-home office / built-in -->
+      <div class="ba-card">
+        <div class="image-pair">
+          <div class="ba-img">
+            <div class="label">BEFORE</div>
+            <div class="img-placeholder" data-label="spare bedroom" style="height:200px; background: #9c8e7c;"></div>
+          </div>
+          <div class="ba-img">
+            <div class="label" style="background: #1e4a2e;">AFTER</div>
+            <div class="img-placeholder" data-label="custom office" style="height:200px; background: #b8a48b;"></div>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3 class="project-title">Custom library & office</h3>
+          <p class="project-desc">Floor-to-ceiling built-ins, window seat, and shiplap accent wall. Carpenters' showcase.</p>
+          <span class="tag">carpentry</span> <span class="tag">built-ins</span>
+        </div>
+      </div>
+    </div> <!-- end ba-grid -->
+
+    <!-- additional reassurance – builder does it all -->
+    <div class="service-note">
+      <p>⚡ <strong>Every trade, one team.</strong> Basements, kitchens, baths, additions, decks, tile, trim, drywall, flooring – we self-perform 90% of work. No sub contractor chaos.</p>
+      <a href="#" class="btn">📋 Request estimate</a>
+    </div>
+
+    <!-- second before/after highlight: might be a featured project with more emphasis 
+         (still showing variety) -->
+    <div style="margin-bottom: 60px;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between;">
+        <h3 style="font-size: 1.6rem; font-weight: 700; color: #2d3e2f;">‣ whole basement finish</h3>
+        <span style="background: #d88c3d; color: white; padding: 5px 15px; border-radius: 30px; font-weight: 600;">featured</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 20px; border-radius: 24px; overflow: hidden; border: 1px solid #e3dad0;">
+        <div style="position: relative;">
+          <div style="position: absolute; top: 16px; left: 16px; background: black; color: white; padding: 6px 20px; border-radius: 40px; font-weight: 700;">BEFORE</div>
+          <div class="img-placeholder" data-label="unfinished basement" style="height: 280px; background: #7a6e5f; font-size: 1.5rem;"></div>
+        </div>
+        <div style="position: relative;">
+          <div style="position: absolute; top: 16px; left: 16px; background: #1e4a2e; color: white; padding: 6px 20px; border-radius: 40px; font-weight: 700;">AFTER</div>
+          <div class="img-placeholder" data-label="media room + bar" style="height: 280px; background: #ac9a83; font-size: 1.5rem;"></div>
+        </div>
+      </div>
+      <div style="margin-top: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+        <div>
+          <span style="font-weight: 700; font-size: 1.4rem; color: #1e3a2a;">1,200 sq ft basement</span>
+          <span style="background: #e2dcd2; margin-left: 18px; padding: 6px 18px; border-radius: 30px;">theatre + wet bar + bedroom</span>
+        </div>
+        <span style="color: #6b4c34;">complete gut to finish: 9 weeks</span>
+      </div>
+    </div>
+
+    <!-- footer with simple contact / license -->
+    <footer class="site-footer">
+      <div>
+        <span style="font-size: 1.4rem; font-weight: 700; color: #2d3e2f;">Oak & Pine</span><br>
+        <span style="color: #7a6e61;">General contracting · family owned</span>
+      </div>
+      <div style="display: flex; gap: 48px; flex-wrap: wrap;">
+        <div>
+          📍 784 Kingstown Park Ave, Central Kingstown<br>
+          📞 (800) 257-1234<br>
+          ✉️ hello@zerubbabellrenovation.com
+        </div>
+        <div style="font-style: italic; color: #6a6156;">
+          "we fix what's broken,<br>and finish what's started"
+        </div>
+      </div>
+    </footer>
+  </div> <!-- .container -->
+
+  <!-- small disclaimer: replace placeholder backgrounds with actual JPGs -->
+  <!-- <div style="text-align: center; padding: 16px; font-size: 0.85rem; color: #7a736a; border-top: 1px dashed #ccc; margin-top: 8px;">
+    ⚠️ demo: replace these styled placeholder divs with your own before/after photos (jpg/png).<br> 
+    The layout is built to highlight transformations — just swap the .img-placeholder with &lt;img&gt; tags.
+  </div> -->
+</body>
+</html>
