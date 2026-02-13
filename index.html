@@ -540,11 +540,11 @@
     The layout is built to highlight transformations — just swap the .img-placeholder with &lt;img&gt; tags.
   </div> -->
   <script>
-  window.addEventListener("DOMContentLoaded", function () {
+  function handleFormReset() {
     const params = new URLSearchParams(window.location.search);
-    const form = document.getElementById("contact-form");
+    const form = document.querySelector("form");
 
-    if (params.get("success") === "true") {
+    if (params.get("success") === "true" && form) {
       form.reset();
 
       const successMsg = document.createElement("div");
@@ -555,7 +555,18 @@
 
       form.appendChild(successMsg);
 
+      // Clean the URL
       window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }
+
+  // Fires on normal load
+  window.addEventListener("DOMContentLoaded", handleFormReset);
+
+  // Fires when navigating back/forward (bfcache fix)
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+      handleFormReset();
     }
   });
 </script>
