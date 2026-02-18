@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <title>Zerubbabel Renovations | Basement & Kitchen Remodeling in [City]</title>
+  <title>Gensintri Renovations Inc. | Basement & Kitchen Remodeling in [City]</title>
 <meta name="description" content="Professional basement, kitchen, and home renovations in [City]. View real before and after projects. Free estimates available.">
   <!-- Google Fonts + simple CSS reset -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -15,13 +15,13 @@
     }
 
     html {
-  scroll-behavior: smooth;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #faf9f7;
-      color: #1e1e1e;
+      background-color: #f6f4ef;  /* soft background to complement gold/green */
+      color: #1e2b1e;               /* deep green-black for readability */
       line-height: 1.5;
     }
 
@@ -31,10 +31,14 @@
       padding: 0 24px;
     }
 
-    /* header / navigation */
+    /* ===== NATIONAL COLOURS of Saint Vincent & the Grenadines =====
+       Blue    : #0072C6 (primary blue)
+       Gold    : #FCD116 (vibrant gold / yellow)
+       Green   : #009739 (rich emerald green)
+    */
     .site-header {
       padding: 24px 0 16px 0;
-      border-bottom: 3px solid #d88c3d;
+      border-bottom: 3px solid #FCD116;    /* gold */
       margin-bottom: 40px;
     }
 
@@ -49,13 +53,13 @@
       font-size: 1.9rem;
       font-weight: 700;
       letter-spacing: -0.02em;
-      color: #2d3e2f;
+      color: #009739;                       /* green */
     }
 
     .logo-area span {
       font-weight: 400;
       font-size: 1rem;
-      color: #6b4f3c;
+      color: #0072C6;                        /* blue */
       display: block;
       margin-top: 4px;
     }
@@ -68,7 +72,7 @@
     .nav-links a {
       text-decoration: none;
       font-weight: 600;
-      color: #3a2c1f;
+      color: #1e3a1e;                         /* deep green */
       font-size: 1.05rem;
       transition: color 0.1s;
       padding: 8px 0;
@@ -76,13 +80,19 @@
     }
 
     .nav-links a:hover {
-      color: #b26b2b;
-      border-bottom-color: #b26b2b;
+      color: #0072C6;                          /* blue */
+      border-bottom-color: #FCD116;            /* gold */
     }
 
-    /* simple hero */
+    /* active link hint */
+    .nav-links a[style*="border-bottom-color"] {
+      border-bottom-color: #FCD116 !important;
+      color: #009739 !important;
+    }
+
+    /* hero */
     .hero {
-      background: linear-gradient(105deg, #ede7dd 0%, #f6f2ec 100%);
+      background: linear-gradient(105deg, #d9e9f5 0%, #faf3dd 100%); /* blue->gold tint */
       border-radius: 24px;
       padding: 40px 36px;
       margin-bottom: 56px;
@@ -90,45 +100,46 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      border-left: 6px solid #0072C6;           /* blue accent */
     }
 
     .hero-text h2 {
       font-size: 2.1rem;
       font-weight: 700;
-      color: #2c4935;
+      color: #009739;                           /* green */
       margin-bottom: 12px;
     }
 
     .hero-text p {
       font-size: 1.2rem;
-      color: #4e4a44;
+      color: #2d4730;                            /* deeper green-grey */
       max-width: 600px;
     }
 
     .hero-badge {
-      background-color: #d88c3d;
-      color: white;
+      background-color: #FCD116;                 /* gold */
+      color: #1e3a1e;                            /* dark green */
       padding: 12px 28px;
       border-radius: 40px;
       font-weight: 700;
       font-size: 1.2rem;
-      box-shadow: 0 8px 14px rgba(0,0,0,0.05);
+      box-shadow: 0 8px 14px rgba(0,114,198,0.12); /* blue shadow */
+      border: 1px solid #0072C6;
     }
 
-    /* MAIN FOCUS: before/after gallery */
     .section-title {
       font-size: 2rem;
       font-weight: 700;
-      color: #1e3a2a;
+      color: #009739;                             /* green */
       margin-bottom: 16px;
       letter-spacing: -0.01em;
-      border-left: 8px solid #d88c3d;
+      border-left: 8px solid #FCD116;             /* gold */
       padding-left: 20px;
     }
 
     .gallery-intro {
       font-size: 1.2rem;
-      color: #4d4a45;
+      color: #2d4730;
       margin-bottom: 40px;
     }
 
@@ -139,19 +150,18 @@
       margin-bottom: 64px;
     }
 
-    /* before/after card – image pair */
     .ba-card {
       background: white;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+      box-shadow: 0 12px 28px rgba(0,114,198,0.08); /* blue cast */
       transition: transform 0.2s, box-shadow 0.2s;
-      border: 1px solid #ece8e0;
+      border: 1px solid #e0e6c0;                    /* subtle gold-green */
     }
 
     .ba-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 24px 40px rgba(94, 69, 42, 0.08);
+      box-shadow: 0 24px 40px rgba(252,209,22,0.15); /* gold glow */
     }
 
     .image-pair {
@@ -160,7 +170,6 @@
       width: 100%;
     }
 
-    /* side-by-side on wider cards, but keep column on narrow */
     @media (min-width: 680px) {
       .image-pair {
         flex-direction: row;
@@ -172,7 +181,7 @@
 
     .ba-img {
       position: relative;
-      background: #dbd5cb;
+      background: #c1d6e8;                        /* light blue placeholder bg */
     }
 
     .ba-img img {
@@ -183,20 +192,23 @@
       object-position: center;
     }
 
-    /* simple labels */
+    /* labels use national colours */
     .label {
       position: absolute;
       top: 12px;
       left: 12px;
-      background: rgba(0,0,0,0.75);
-      backdrop-filter: blur(4px);
+      background: #0072C6;                         /* blue */
       color: white;
       font-size: 0.8rem;
       font-weight: 700;
       padding: 6px 14px;
       border-radius: 30px;
       letter-spacing: 0.5px;
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid #FCD116;                    /* gold trim */
+    }
+
+    .label[style*="background: #1e4a2e"] { 
+      background: #009739 !important;                /* force green for AFTER */
     }
 
     .card-content {
@@ -207,28 +219,28 @@
       font-size: 1.3rem;
       font-weight: 700;
       margin-bottom: 6px;
-      color: #2b3e2b;
+      color: #009739;                               /* green */
     }
 
     .project-desc {
-      color: #625e57;
+      color: #2f4a33;
       font-size: 0.95rem;
       margin-bottom: 14px;
     }
 
     .tag {
       display: inline-block;
-      background: #efe9e1;
+      background: #FCD116;                          /* gold */
       padding: 4px 16px;
       border-radius: 50px;
       font-size: 0.8rem;
       font-weight: 600;
-      color: #5a4c3a;
+      color: #1e3a1e;                               /* dark green */
+      border: 1px solid #0072C6;
     }
 
-    /* secondary row – extra service highlight */
     .service-note {
-      background: #f4efe8;
+      background: #ecf5e6;                           /* very light green */
       border-radius: 18px;
       padding: 32px 28px;
       margin: 24px 0 48px;
@@ -236,20 +248,21 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      border-left: 8px solid #0072C6;                /* blue */
     }
 
     .service-note p {
       font-size: 1.15rem;
       font-weight: 500;
-      color: #35322b;
+      color: #1e3a1e;
     }
 
     .service-note strong {
-      color: #9e642c;
+      color: #0072C6;                                /* blue */
     }
 
     .btn {
-      background: #2d3e2f;
+      background: #009739;                            /* green */
       color: white;
       padding: 12px 36px;
       border-radius: 40px;
@@ -257,24 +270,33 @@
       font-weight: 600;
       font-size: 1rem;
       transition: background 0.2s;
+      border: 1px solid #FCD116;
     }
 
     .btn:hover {
-      background: #4f6b52;
+      background: #0072C6;                            /* blue */
     }
 
     /* footer */
     .site-footer {
-      border-top: 1px solid #dbd3c9;
+      border-top: 3px solid #FCD116;                  /* gold */
       padding: 40px 0 30px;
       margin-top: 20px;
-      color: #595249;
+      color: #1e4620;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
     }
 
-    /* mobile adjustments */
+    .site-footer a {
+      color: #0072C6;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      border-bottom: 2px solid #FCD116;
+    }
+
     @media (max-width: 680px) {
       .header-flex {
         flex-direction: column;
@@ -297,9 +319,8 @@
       }
     }
 
-    /* placeholder style – because we don't have actual images */
     .img-placeholder {
-      background: linear-gradient(145deg, #c1b6a8, #aea08f);
+      background: linear-gradient(145deg, #a3c6e0, #7fb3d5); /* blue family */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -312,6 +333,25 @@
       content: "📷 " attr(data-label);
       font-size: 1.2rem;
     }
+
+    /* override for the featured section labels */
+    div[style*="background: black"] {
+      background: #0072C6 !important;                /* blue */
+    }
+    div[style*="background: #1e4a2e"] {
+      background: #009739 !important;                /* green */
+    }
+    span[style*="background: #d88c3d"] {
+      background: #FCD116 !important;                /* gold */
+      color: #1e3a1e !important;
+    }
+    h3[style*="color: #2d3e2f"] {
+      color: #009739 !important;
+    }
+    div[style*="background: #e2dcd2"] {
+      background: #e9f0db !important;
+      border: 1px solid #0072C6;
+    }
   </style>
 </head>
 <body>
@@ -321,18 +361,18 @@
     <header class="site-header">
       <div class="header-flex">
         <div class="logo-area">
-          <h1>Zerubbabel Renovations<span>construction · renovations · craft</span></h1>
+          <h1>Gensintri Renovations Inc<span>construction · renovations · craft</span></h1>
         </div>
         <div class="nav-links">
           <a href="#">Home</a>
-          <a href="#" style="border-bottom-color: #b26b2b; color: #2d3e2f;">Before/After</a>
+          <a href="#" style="border-bottom-color: #FCD116; color: #009739;">Before/After</a>
           <a href="#">Services</a>
           <a href="#">Contact</a>
         </div>
       </div>
     </header>
 
-    <!-- simple hero acknowledging 'builder does everything' -->
+    <!-- hero -->
     <div class="hero">
       <div class="hero-text">
         <h2>From basement to rooftop.</h2>
@@ -343,7 +383,7 @@
       </div>
     </div>
 
-    <!-- ********** MAIN GALLERY: BEFORE & AFTER ********** -->
+    <!-- MAIN GALLERY: BEFORE & AFTER -->
     <h2 class="section-title">Before & after</h2>
     <p class="gallery-intro">Real work. Real homes. Every renovation tells a story.</p>
     
@@ -354,12 +394,11 @@
         <div class="image-pair">
           <div class="ba-img">
             <div class="label">BEFORE</div>
-            <!-- Image placeholder – in real use, replace src with actual images -->
-            <div class="img-placeholder" data-label="basement old" style="height:200px; background: #8f7e6b;"></div>
+            <div class="img-placeholder" data-label="basement old" style="height:200px; background: #6f96b5;"></div>
           </div>
           <div class="ba-img">
-            <div class="label" style="background: #1e4a2e;">AFTER</div>
-            <div class="img-placeholder" data-label="basement new" style="height:200px; background: #a58862;"></div>
+            <div class="label" style="background: #009739;">AFTER</div>
+            <div class="img-placeholder" data-label="basement new" style="height:200px; background: #b1c9a0;"></div>
           </div>
         </div>
         <div class="card-content">
@@ -374,11 +413,11 @@
         <div class="image-pair">
           <div class="ba-img">
             <div class="label">BEFORE</div>
-            <div class="img-placeholder" data-label="90s kitchen" style="height:200px; background: #9b8a7a;"></div>
+            <div class="img-placeholder" data-label="90s kitchen" style="height:200px; background: #7d9eb5;"></div>
           </div>
           <div class="ba-img">
-            <div class="label" style="background: #1e4a2e;">AFTER</div>
-            <div class="img-placeholder" data-label="modern kitchen" style="height:200px; background: #bea98b;"></div>
+            <div class="label" style="background: #009739;">AFTER</div>
+            <div class="img-placeholder" data-label="modern kitchen" style="height:200px; background: #b8cfaa;"></div>
           </div>
         </div>
         <div class="card-content">
@@ -393,11 +432,11 @@
         <div class="image-pair">
           <div class="ba-img">
             <div class="label">BEFORE</div>
-            <div class="img-placeholder" data-label="tiny bath" style="height:200px; background: #897b6f;"></div>
+            <div class="img-placeholder" data-label="tiny bath" style="height:200px; background: #668bb3;"></div>
           </div>
           <div class="ba-img">
-            <div class="label" style="background: #1e4a2e;">AFTER</div>
-            <div class="img-placeholder" data-label="spa bath" style="height:200px; background: #b6a38e;"></div>
+            <div class="label" style="background: #009739;">AFTER</div>
+            <div class="img-placeholder" data-label="spa bath" style="height:200px; background: #aec2a1;"></div>
           </div>
         </div>
         <div class="card-content">
@@ -412,11 +451,11 @@
         <div class="image-pair">
           <div class="ba-img">
             <div class="label">BEFORE</div>
-            <div class="img-placeholder" data-label="exterior wall" style="height:200px; background: #7e7368;"></div>
+            <div class="img-placeholder" data-label="exterior wall" style="height:200px; background: #5f85ad;"></div>
           </div>
           <div class="ba-img">
-            <div class="label" style="background: #1e4a2e;">AFTER</div>
-            <div class="img-placeholder" data-label="sunroom" style="height:200px; background: #cdb79e;"></div>
+            <div class="label" style="background: #009739;">AFTER</div>
+            <div class="img-placeholder" data-label="sunroom" style="height:200px; background: #aac59f;"></div>
           </div>
         </div>
         <div class="card-content">
@@ -426,16 +465,16 @@
         </div>
       </div>
       
-      <!-- 5 – Deck & outdoor living (more construction) -->
+      <!-- 5 – Deck & outdoor living -->
       <div class="ba-card">
         <div class="image-pair">
           <div class="ba-img">
             <div class="label">BEFORE</div>
-            <div class="img-placeholder" data-label="rotted deck" style="height:200px; background: #877a6b;"></div>
+            <div class="img-placeholder" data-label="rotted deck" style="height:200px; background: #6f93b7;"></div>
           </div>
           <div class="ba-img">
-            <div class="label" style="background: #1e4a2e;">AFTER</div>
-            <div class="img-placeholder" data-label="composite deck" style="height:200px; background: #ab9b86;"></div>
+            <div class="label" style="background: #009739;">AFTER</div>
+            <div class="img-placeholder" data-label="composite deck" style="height:200px; background: #b5d2a4;"></div>
           </div>
         </div>
         <div class="card-content">
@@ -450,11 +489,11 @@
         <div class="image-pair">
           <div class="ba-img">
             <div class="label">BEFORE</div>
-            <div class="img-placeholder" data-label="spare bedroom" style="height:200px; background: #9c8e7c;"></div>
+            <div class="img-placeholder" data-label="spare bedroom" style="height:200px; background: #7595b6;"></div>
           </div>
           <div class="ba-img">
-            <div class="label" style="background: #1e4a2e;">AFTER</div>
-            <div class="img-placeholder" data-label="custom office" style="height:200px; background: #b8a48b;"></div>
+            <div class="label" style="background: #009739;">AFTER</div>
+            <div class="img-placeholder" data-label="custom office" style="height:200px; background: #b7cdab;"></div>
           </div>
         </div>
         <div class="card-content">
@@ -463,82 +502,76 @@
           <span class="tag">carpentry</span> <span class="tag">built-ins</span>
         </div>
       </div>
-    </div> <!-- end ba-grid -->
+    </div>
 
-    <!-- additional reassurance – builder does it all -->
+    <!-- service note + contact form with updated colours -->
     <div class="service-note">
-  <p>⚡ <strong>Every trade, one team.</strong> Basements, kitchens, baths, additions, decks, tile, trim, drywall, flooring – we self-perform 90% of work. No sub contractor chaos.</p>
+      <p>⚡ <strong>Every trade, one team.</strong> Basements, kitchens, baths, additions, decks, tile, trim, drywall, flooring – we self-perform 90% of work. No sub contractor chaos.</p>
 
-  <form action="https://formspree.io/f/mkovjveq" method="POST" style="margin-top:20px; width:100%; max-width:500px;">
-    
-    <input type="hidden" name="_redirect" value="https://kodykam.github.io/BelRenovations/?success=true">
+      <form action="https://formspree.io/f/mkovjveq" method="POST" style="margin-top:20px; width:100%; max-width:500px;">
+        
+        <input type="hidden" name="_redirect" value="https://kodykam.github.io/BelRenovations/?success=true">
 
-    <input type="text" name="name" placeholder="Your Name" required
-      style="width:100%; padding:12px; margin-bottom:10px; border-radius:8px; border:1px solid #ccc;">
+        <input type="text" name="name" placeholder="Your Name" required
+          style="width:100%; padding:12px; margin-bottom:10px; border-radius:8px; border:1px solid #0072C6;">
 
-    <input type="email" name="email" placeholder="Your Email" required
-      style="width:100%; padding:12px; margin-bottom:10px; border-radius:8px; border:1px solid #ccc;">
+        <input type="email" name="email" placeholder="Your Email" required
+          style="width:100%; padding:12px; margin-bottom:10px; border-radius:8px; border:1px solid #0072C6;">
 
-    <textarea name="message" placeholder="Tell us about your project" rows="4"
-      style="width:100%; padding:12px; margin-bottom:12px; border-radius:8px; border:1px solid #ccc;"></textarea>
+        <textarea name="message" placeholder="Tell us about your project" rows="4"
+          style="width:100%; padding:12px; margin-bottom:12px; border-radius:8px; border:1px solid #0072C6;"></textarea>
 
-    <button type="submit"
-      style="background:#2d3e2f; color:white; padding:12px 24px; border:none; border-radius:40px; font-weight:600; cursor:pointer;">
-      📋 Request Free Estimate
-    </button>
-  </form>
-</div>
+        <button type="submit"
+          style="background:#009739; color:white; padding:12px 24px; border:none; border-radius:40px; font-weight:600; cursor:pointer; border:1px solid #FCD116;">
+          📋 Request Free Estimate
+        </button>
+      </form>
+    </div>
 
-    <!-- second before/after highlight: might be a featured project with more emphasis 
-         (still showing variety) -->
+    <!-- featured project -->
     <div style="margin-bottom: 60px;">
       <div style="display: flex; align-items: baseline; justify-content: space-between;">
-        <h3 style="font-size: 1.6rem; font-weight: 700; color: #2d3e2f;">‣ whole basement finish</h3>
-        <span style="background: #d88c3d; color: white; padding: 5px 15px; border-radius: 30px; font-weight: 600;">featured</span>
+        <h3 style="font-size: 1.6rem; font-weight: 700; color: #009739;">‣ whole basement finish</h3>
+        <span style="background: #FCD116; color: #1e3a1e; padding: 5px 15px; border-radius: 30px; font-weight: 600;">featured</span>
       </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 20px; border-radius: 24px; overflow: hidden; border: 1px solid #e3dad0;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 20px; border-radius: 24px; overflow: hidden; border: 1px solid #b3cfa3;">
         <div style="position: relative;">
-          <div style="position: absolute; top: 16px; left: 16px; background: black; color: white; padding: 6px 20px; border-radius: 40px; font-weight: 700;">BEFORE</div>
-          <div class="img-placeholder" data-label="unfinished basement" style="height: 280px; background: #7a6e5f; font-size: 1.5rem;"></div>
+          <div style="position: absolute; top: 16px; left: 16px; background: #0072C6; color: white; padding: 6px 20px; border-radius: 40px; font-weight: 700;">BEFORE</div>
+          <div class="img-placeholder" data-label="unfinished basement" style="height: 280px; background: #6087b3; font-size: 1.5rem;"></div>
         </div>
         <div style="position: relative;">
-          <div style="position: absolute; top: 16px; left: 16px; background: #1e4a2e; color: white; padding: 6px 20px; border-radius: 40px; font-weight: 700;">AFTER</div>
-          <div class="img-placeholder" data-label="media room + bar" style="height: 280px; background: #ac9a83; font-size: 1.5rem;"></div>
+          <div style="position: absolute; top: 16px; left: 16px; background: #009739; color: white; padding: 6px 20px; border-radius: 40px; font-weight: 700;">AFTER</div>
+          <div class="img-placeholder" data-label="media room + bar" style="height: 280px; background: #b8d0a4; font-size: 1.5rem;"></div>
         </div>
       </div>
       <div style="margin-top: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
         <div>
-          <span style="font-weight: 700; font-size: 1.4rem; color: #1e3a2a;">1,200 sq ft basement</span>
-          <span style="background: #e2dcd2; margin-left: 18px; padding: 6px 18px; border-radius: 30px;">theatre + wet bar + bedroom</span>
+          <span style="font-weight: 700; font-size: 1.4rem; color: #009739;">1,200 sq ft basement</span>
+          <span style="background: #e2f0d6; margin-left: 18px; padding: 6px 18px; border-radius: 30px; border:1px solid #0072C6;">theatre + wet bar + bedroom</span>
         </div>
-        <span style="color: #6b4c34;">complete gut to finish: 9 weeks</span>
+        <span style="color: #0072C6;">complete gut to finish: 9 weeks</span>
       </div>
     </div>
 
-    <!-- footer with simple contact / license -->
+    <!-- footer -->
     <footer class="site-footer">
       <div>
-        <span style="font-size: 1.4rem; font-weight: 700; color: #2d3e2f;">Zerubbabel Renovations</span><br>
-        <span style="color: #7a6e61;">General contracting · family owned</span>
+        <span style="font-size: 1.4rem; font-weight: 700; color: #009739;">Gensintri Renovations Inc.</span><br>
+        <span style="color: #0072C6;">General contracting · family owned</span>
       </div>
       <div style="display: flex; gap: 48px; flex-wrap: wrap;">
-        <div>
+        <div style="color: #1e4620;">
           📍 784 Kingstown Park, Central Kingstown<br>
           📞 <a href="tel:(800)257-1234">(800) 257-1234</a><br>
           📧 <a href="mailto:hello@zerubbabelrenovation.com">hello@zerubbabelrenovation.com</a>
         </div>
-        <div style="font-style: italic; color: #6a6156;">
+        <div style="font-style: italic; color: #1e3a1e; border-left: 2px solid #FCD116; padding-left: 16px;">
           "we fix what's broken,<br>and finish what's started"
         </div>
       </div>
     </footer>
-  </div> <!-- .container -->
+  </div>
 
-  <!-- small disclaimer: replace placeholder backgrounds with actual JPGs -->
-  <!-- <div style="text-align: center; padding: 16px; font-size: 0.85rem; color: #7a736a; border-top: 1px dashed #ccc; margin-top: 8px;">
-    ⚠️ demo: replace these styled placeholder divs with your own before/after photos (jpg/png).<br> 
-    The layout is built to highlight transformations — just swap the .img-placeholder with &lt;img&gt; tags.
-  </div> -->
   <script>
   function handleFormReset() {
     const params = new URLSearchParams(window.location.search);
@@ -550,25 +583,21 @@
       const successMsg = document.createElement("div");
       successMsg.textContent = "✅ Thank you! Your request has been sent.";
       successMsg.style.marginTop = "15px";
-      successMsg.style.color = "#2d3e2f";
+      successMsg.style.color = "#009739";
       successMsg.style.fontWeight = "600";
 
       form.appendChild(successMsg);
 
-      // Clean the URL
       window.history.replaceState({}, document.title, window.location.pathname);
     }
   }
 
-  // Fires on normal load
   window.addEventListener("DOMContentLoaded", handleFormReset);
-
-  // Fires when navigating back/forward (bfcache fix)
   window.addEventListener("pageshow", function (event) {
     if (event.persisted) {
       handleFormReset();
     }
   });
-</script>
+  </script>
 </body>
 </html>
