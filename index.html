@@ -177,6 +177,10 @@
       .ba-img {
         width: 50%;
       }
+
+      .desktop-row { /* desktop side by side */
+      flex-direction: row !important;
+    }
     }
 
     .ba-img {
@@ -303,6 +307,10 @@
     align-items: stretch; /* changed from 'start' to stretch */
     gap: 16px;
   }
+
+  .desktop-row {
+      flex-direction: column !important;
+    }
   
   /* Keep logo inline with text on mobile */
   .logo-area {
@@ -536,11 +544,26 @@
       </div>
     </div>
 
-    <!-- service note + contact form with updated colours -->
-    <div class="service-note">
-      <p>⚡ <strong>Every trade, one team.</strong> Basements, kitchens, baths, additions, decks, tile, trim, drywall, flooring – we self-perform 90% of work. No sub contractor chaos.</p>
-
-      <form action="https://formspree.io/f/mkovjveq" method="POST" style="margin-top:20px; width:100%; max-width:500px;">
+<!-- service note + contact form - side by side on desktop -->
+<div class="service-note" style="padding: 32px 28px;">
+  
+  <!-- Responsive flex container -->
+  <div style="display: flex; flex-direction: column; gap: 30px; width: 100%; 
+              @media (min-width: 900px) { flex-direction: row; }"
+       class="desktop-row">
+    
+    <!-- Left column - paragraph (60% width on desktop) -->
+    <div style="flex: 1.5; min-width: 0;">
+      <p style="font-size: 1.15rem; font-weight: 500; color: #1e3a1e; margin: 0;">
+        ⚡ <strong style="color: #0072C6;">Every trade, one team.</strong> 
+        Basements, kitchens, baths, additions, decks, tile, trim, drywall, flooring – 
+        we self-perform 90% of work. No sub contractor chaos.
+      </p>
+    </div>
+    
+    <!-- Right column - form (40% width on desktop) -->
+    <div style="flex: 1; min-width: 0;">
+      <form action="https://formspree.io/f/mkovjveq" method="POST" style="width: 100%; margin: 0;">
         
         <input type="hidden" name="_redirect" value="https://kodykam.github.io/BelRenovations/?success=true">
 
@@ -554,11 +577,13 @@
           style="width:100%; padding:12px; margin-bottom:12px; border-radius:8px; border:1px solid #0072C6;"></textarea>
 
         <button type="submit"
-          style="background:#009739; color:white; padding:12px 24px; border:none; border-radius:40px; font-weight:600; cursor:pointer; border:1px solid #FCD116;">
+          style="background:#009739; color:white; padding:12px 24px; border:none; border-radius:40px; font-weight:600; cursor:pointer; border:1px solid #FCD116; width: 100%;">
           📋 Request Free Estimate
         </button>
       </form>
     </div>
+  </div>
+</div>
 
     <!-- featured project -->
     <div style="margin-bottom: 60px;">
